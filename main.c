@@ -1,4 +1,7 @@
-
+/* ce programme affiche a l'utilisateur le triangle de pascal de la premi√®re ligne √† la ni√®me 
+    qu'il souhaite . Notons que le programme n'est pas fonctionnel pour des nombres √©lev√©s .
+    Pour le bon fonctionnement du programme l'utilisateur devra √©viter d'entrer des saisis autre que des entier___.
+*/
 #include <stdio.h>
 
 int main()
@@ -8,11 +11,11 @@ int main()
     scanf("%d", &n);
 
     int t[n][n]; // tableau pour stocker les valeurs du triangle
-    for (i = 0; i < n; i++) // initialiser la premiËre colonne ‡ 1
+    for (i = 0; i < n; i++) // initialiser la premi√®re colonne √† 1
     {
         t[i][0] = 1;
     }
-    for (i = 0; i < n; i++) // initialiser la diagonale ‡ 1
+    for (i = 0; i < n; i++) // initialiser la diagonale √† 1
     {
         t[i][i] = 1;
     }
@@ -20,18 +23,18 @@ int main()
     {
         for (j = 1; j < i; j++)
         {
-            t[i][j] = t[i-1][j-1] + t[i-1][j]; // somme des deux nombres qui surmontent
+            t[i][j] = t[i-1][j-1] + t[i-1][j]; // somme des deux nombres qui surmotent notre ligne et notre colonne du tableau
         }
     }
     for (i = 0; i < n; i++) // afficher le tableau
     {
-        for (k = 0; k < n-i-1; k++) // espaces pour aligner les ÈlÈments au centre
+        for (k = 0; k < n-i-1; k++) // espaces pour aligner les √©l√©ments au centre
         {
             printf(" ");
         }
         for (j = 0; j <= i; j++)
         {
-            printf("%d ", t[i][j]); // ÈlÈments du triangle
+            printf("%d ", t[i][j]); // √©l√©ments du triangle
         }
         printf("\n"); // saut de ligne
     }
